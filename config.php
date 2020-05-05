@@ -17,8 +17,7 @@
 /**
  * Photo config.
  *
- * @package   theme_photo
- * @copyright 2016 Damyon Wiese
+ * @package   theme_pvirt
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -29,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 
 // The first setting we need is the name of the theme. This should be the last part of the component name, and the same
 // as the directory name for our theme.
-$THEME->name = 'photo';
+$THEME->name = 'pvirt';
 
 // This setting list the style sheets we want to include in our theme. Because we want to use SCSS instead of CSS - we won't
 // list any style sheets. If we did we would list the name of a file in the /styles/ folder for our theme without any css file
@@ -66,8 +65,3 @@ $THEME->requiredblocks = '';
 // This is a feature that tells the blocks library not to use the "Add a block" block. We don't want this in boost based themes
 // because it forces a block region into the page when editing is enabled and it takes up too much room.
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
-// This is the function that returns the SCSS source for the main file in our theme. We override the boost version because
-// we want to allow presets uploaded to our own theme file area to be selected in the preset list.
-$THEME->scss = function($theme) {
-    return theme_photo_get_main_scss_content($theme);
-};
